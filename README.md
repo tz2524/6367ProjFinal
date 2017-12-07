@@ -1,3 +1,51 @@
+
+## Plugin Instruction
+
+### xml
+```xml
+<plugin>
+  <groupId>org.pitest</groupId>
+  <artifactId>pitest-maven</artifactId>
+  <version>1.2.5-SNAPSHOT</version>
+  <configuration>
+   <mutators>
+    <mutator>ABS_MUTATOR</mutator>
+    <mutator>AOD_MUTATOR</mutator>
+    <mutator>AOR_MUTATOR_ADD</mutator>
+    <mutator>AOR_MUTATOR_DIVIDE</mutator>
+    <mutator>AOR_MUTATOR_MINUS</mutator>
+    <mutator>AOR_MUTATOR_MULTIPLY</mutator>
+    <mutator>CRCR_MUTATOR_DECREMENT</mutator>
+    <mutator>CRCR_MUTATOR_INCREMENT</mutator>
+    <mutator>CRCR_MUTATOR_NEGATION</mutator>
+    <mutator>CRCR_MUTATOR_ONE</mutator>
+    <mutator>CRCR_MUTATOR_ZERO</mutator>
+    <mutator>OBBN_MUTATOR</mutator>
+    <mutator>ROR_MUTATOR_TOEQUAL</mutator>
+    <mutator>ROR_MUTATOR_TOGREATER</mutator>
+    <mutator>ROR_MUTATOR_TOGTREATEREQUAL</mutator>
+    <mutator>ROR_MUTATOR_TONOTEQUAL</mutator>
+    <mutator>ROR_MUTATOR_TOSMALLER</mutator>
+    <mutator>ROR_MUTATOR_TOSMALLEREQUAL</mutator>
+    <mutator>UOI_MUTATOR_DECREMENT</mutator>
+    <mutator>UOI_MUTATOR_INCREMENT</mutator>
+    <mutator>UOI_MUTATOR_INVERT</mutator>
+    <mutator>UOI_MUTATOR_MINUS</mutator>
+   </mutators>
+  <targetClasses>
+  <param> org.neo4j.batchimport.Importer</param>
+  </targetClasses>
+  <targetTests>
+  <param>org.neo4j.batchimport.ImporterTest</param>
+  </targetTests>
+</configuration>
+</plugin>
+```
+### build
+
+* # The code still cannot pass the tests of PITEST itself, when building the project please ignore the tests by appending `-Dmaven.test.skip=true` after `mvn package`
+
+
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.pitest/pitest/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/org.pitest/pitest)
 [![Build Status](https://travis-ci.org/hcoles/pitest.png?branch=master)](https://travis-ci.org/hcoles/pitest)
 
